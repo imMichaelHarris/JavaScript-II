@@ -13,14 +13,31 @@ console.log("Closure Challenge 1 ", writeName());
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
+  let count = 0;
+  return function(){
+    console.log(count++); //ok this worked but how count doesn't revert back to zero
+  }
 };
 // Example usage: const newCounter = counter();
-// newCounter(); // 1
-// newCounter(); // 2
+const newCounter = counter();
+ newCounter(); // 1
+ newCounter(); // 2
+ newCounter();
 
 // ==== Challenge 3: Create a counter function with an object that can increment and decrement ====
 const counterFactory = () => {
   // Return an object that has two methods called `increment` and `decrement`.
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
+  return {
+    increment: function(count){
+        return count++;
+    },
+    decrement: function(){
+      count--;
+    }
+  }
 };
+console.log("Closure Challenge 3 ", counterFactory().increment(2));
+console.log("Closure Challenge 3 ", counterFactory().increment(4));
+
