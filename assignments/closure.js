@@ -1,6 +1,11 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+const lastName = "Harris";
 
+function writeName(){
+  return lastName;
+}
+console.log("Closure Challenge 1 ", writeName());
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
