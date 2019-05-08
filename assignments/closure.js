@@ -1,8 +1,8 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 const lastName = "Harris";
-
 function writeName(){
+
   return lastName;
 }
 console.log("Closure Challenge 1 ", writeName());
@@ -29,15 +29,27 @@ const counterFactory = () => {
   // Return an object that has two methods called `increment` and `decrement`.
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
+  // return {
+  //   increment: function(count){
+  //       return count++;
+  //   },
+  //   decrement: function(){
+  //     count--;
+  //   }
+  //}
+  let count = 0;
   return {
-    increment: function(count){
-        return count++;
+    increment() {
+      return count++;
     },
-    decrement: function(){
-      count--;
+    decrement(){
+      return count--;
     }
   }
 };
-console.log("Closure Challenge 3 ", counterFactory().increment(2));
-console.log("Closure Challenge 3 ", counterFactory().increment(4));
+let county = counterFactory();
+console.log("Closure Challenge 3 ", county.increment());
+console.log("Closure Challenge 3 ", county.increment());
+console.log("Closure Challenge 3 ", county.increment());
+console.log("Closure Challenge 3 ", county.increment());
 
